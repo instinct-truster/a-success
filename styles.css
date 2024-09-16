@@ -13,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-.menu {
+.radial-menu {
   position: relative;
   width: 280px;
   height: 280px;
@@ -23,43 +23,43 @@ body {
   flex-direction: column;
 }
 
-.menu li {
+.radial-menu li {
   position: absolute;
   left: 20px;
   list-style: none;
   transition: 0.5s;
-  transition-delay: calc(0.1s * var(--i));
+  transition-delay: calc(0.1s * var(--index));
   transform-origin: 140px;
   color: #fff;
   transform: rotate(0deg) translateX(110px);
 }
 
-.menu.active li {
-  transform: rotate(calc(360deg / 8 * var(--i))) translateX(20px);
+.radial-menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--index))) translateX(20px);
 }
 
-.menu li a {
+.radial-menu li a {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60px;
   height: 60px;
-  color: var(--clr);
-  border: 2px solid var(--clr);
+  color: var(--color);
+  border: 2px solid var(--color);
   border-radius: 50%;
   font-size: 1.5em;
-  transform: rotate(calc(360deg / -8 * var(--i)));
+  transform: rotate(calc(360deg / -8 * var(--index)));
   transition: 1s;
 }
 
-.menu li a:hover {
+.radial-menu li a:hover {
   transition: 0s;
-  background: var(--clr);
+  background: var(--color);
   color: #0b62aa;
-  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
+  box-shadow: 0 0 10px var(--color), 0 0 30px var(--color), 0 0 50px var(--color);
 }
 
-.menu .toggle {
+.radial-menu .radial-menu-toggle {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -76,117 +76,6 @@ body {
   transition: transform 1.25s;
 }
 
-.menu.active .toggle {
+.radial-menu.active .radial-menu-toggle {
   transform: rotate(360deg);
-}
-
-.button {
-  font-family: inherit;
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 100%);
-  background-image: url(./assets/blue.jpg);
-  padding: 0.75em 1.25em;
-  border: 0;
-  border-radius: 1.25rem;
-}
-
-.glow-effect {
-  --glow-line-color: #fff;
-  --glow-line-thickness: 2px;
-  --glow-line-length: 20px;
-  --glow-blur-color: #fff;
-  --glow-blur-size: 5px;
-  --glow-offset: 0px;
-  --animation-speed: 1200ms;
-  /* do not change, used for calculations */
-  --container-offset: 100px;
-  position: relative;
-}
-
-.glow-container {
-  pointer-events: none;
-  position: absolute;
-  inset: calc(var(--container-offset) / -2);
-  width: calc(100% + var(--container-offset));
-  height: calc(100% + var(--container-offset));
-  opacity: 0;
-  /* outline: 3px solid blue; */
-}
-
-.glow-blur,
-.glow-line {
-  width: calc(100% - var(--container-offset) + var(--glow-offset));
-  height: calc(100% - var(--container-offset) + var(--glow-offset));
-  x: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
-  y: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
-  /* rx: 1.25rem; */
-  fill: transparent;
-  stroke: black;
-  stroke-width: 5px;
-  stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length));
-}
-
-.glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
-  stroke-dashoffset: -80px;
-  transition: stroke-dashoffset var(--animation-speed) ease-in;
-}
-
-.glow-line {
-  stroke: var(--glow-line-color);
-  stroke-width: var(--glow-line-thickness);
-}
-
-.glow-blur {
-  filter: blur(var(--glow-blur-size));
-  stroke: var(--glow-blur-color);
-  stroke-width: var(--glow-blur-size);
-}
-
-.glow-effect:is(:hover, :focus) .glow-container {
-  animation: glow-visibility ease-in-out var(--animation-speed);
-}
-
-@keyframes glow-visibility {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  25%,
-  75% {
-    opacity: 1;
-  }
-}
-
-.glow-effect[data-glow-animation="false"] {
-  --glow-line-length: 50px;
-}
-.glow-effect[data-glow-offset="true"] {
-  --glow-offset: 10px;
-}
-
-.glow-effect[data-glow-animation="grow"]:is(:hover, :focus) .glow-container {
-  scale: 1.3;
-  transition: scale var(--animation-speed) linear;
-}
-
-.txt-input {
-  width: 100%;
-  padding: 0.7rem 0;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 2rem;
-  cursor: crosshair;
-}
-
-.txt-input::placeholder {
-  color: #fff;
-  font-size: 2rem;
-}
-
-input:focus::placeholder {
-  color: transparent;
 }

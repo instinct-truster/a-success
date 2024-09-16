@@ -4,57 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masterpiece</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/modern-normalize/modern-normalize.css" />
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css" />
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <ul class="menu">
-      <div class="toggle"><ion-icon name="bulb-outline"></ion-icon></div>
-      <li style="--i: 0; --clr: #fff">
+    <ul class="radial-menu">
+      <div class="radial-menu-toggle">
+        <ion-icon name="bulb-outline"></ion-icon>
+      </div>
+      <li style="--index: 0; --color: #fff">
         <a href="#"><ion-icon name="home-outline"></ion-icon></a>
       </li>
-      <li style="--i: 1; --clr: #fff">
+      <li style="--index: 1; --color: #fff">
         <a href="#"><ion-icon name="alarm-outline"></ion-icon></a>
       </li>
-      <li style="--i: 2; --clr: #fff">
+      <li style="--index: 2; --color: #fff">
         <a href="#"><ion-icon name="partly-sunny-outline"></ion-icon></a>
       </li>
-      <li style="--i: 3; --clr: #fff">
+      <li style="--index: 3; --color: #fff">
         <a href="#"><ion-icon name="beer-outline"></ion-icon></a>
       </li>
-      <li style="--i: 4; --clr: #fff">
+      <li style="--index: 4; --color: #fff">
         <a href="#"><ion-icon name="fast-food-outline"></ion-icon></a>
       </li>
-      <li style="--i: 5; --clr: #fff">
+      <li style="--index: 5; --color: #fff">
         <a href="#"><ion-icon name="american-football-outline"></ion-icon></a>
       </li>
-      <li style="--i: 6; --clr: #fff">
+      <li style="--index: 6; --color: #fff">
         <a href="#"><ion-icon name="barbell-outline"></ion-icon></a>
       </li>
-      <li style="--i: 7; --clr: #fff">
+      <li style="--index: 7; --color: #fff">
         <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
       </li>
     </ul>
-    <div class="button glow-effect">
-      <input
-        type="text"
-        class="txt-input"
-        placeholder="Create a new goal..."
-        spellcheck="false"
-        autocomplete="off" />
-      <svg class="glow-container">
-        <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
-        <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
-      </svg>
-    </div>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
